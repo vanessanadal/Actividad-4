@@ -36,6 +36,8 @@ lerna-debug.log*
 # Configuration
 .env
 ormconfig.json
+chromedriver.exe
+geckodriver.exe
 
 # Database
 src/database/migrations

@@ -1,0 +1,11 @@
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#Banner h1,
+h2 {
+  position: relative;
+  color: $third-color;
+}

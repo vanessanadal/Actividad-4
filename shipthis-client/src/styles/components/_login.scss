@@ -1,0 +1,33 @@
+#LoginForm{
+    width: 100% !important;
+  }
+  .loginCard{
+    width: 100% !important;
+  }
+  .account-icons{
+    display: flex;
+    justify-content: center;
+  }
+  .login-logo{
+    width: 80%;
+  }
+  .center-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .forgotPassword:hover{
+    cursor: pointer;
+  }
+  .forgotPassword{
+    width: 40% !important;
+    margin: 0 !important;
+  }
+  .textButton {
+    margin: 0 !important;
+    color: #1c1954;
+    list-style-type: none;
+    list-style-position: outside;
+    cursor: pointer;
+  }

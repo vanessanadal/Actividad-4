@@ -3,11 +3,16 @@ import Vuex from "vuex";
 import jwt from "../common/jwt.service";
 import createPersistedState from "vuex-persistedstate";
 import modules from "./modules";
+import LogRocket from "logrocket";
+LogRocket.init("bwtoit/shipthis");
 
+import createPlugin from "logrocket-vuex";
+const logrocketPlugin = createPlugin(LogRocket);
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules, //all modules are automatically imported
+
   state: {
     idToken: null,
     user: null,
@@ -17,7 +22,11 @@ export default new Vuex.Store({
       state.idToken = token;
       state.user = user;
       jwt.saveToken(token);
+      LogRocket.identify({
+        email: user.email,
+      });
     },
+
     logout(state) {
       state.idToken = null;
       state.user = null;
@@ -33,6 +42,7 @@ export default new Vuex.Store({
       });
     },
   },
+
   getters: {},
-  plugins: [createPersistedState({ paths: ["users"] })],
+  plugins: [createPersistedState({ paths: ["users"] }), logrocketPlugin],
 });

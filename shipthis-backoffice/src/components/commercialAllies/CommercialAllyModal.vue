@@ -20,6 +20,7 @@
                 <v-text-field
                   v-model="formCommercialAlly.name"
                   label="Company name"
+                  id="company-name"
                   placeholder="Company name"
                   :rules="[rules.required]"
                   required
@@ -32,6 +33,7 @@
                 <v-text-field
                   v-model="formCommercialAlly.email"
                   label="Company email"
+                  id="compnay-email"
                   placeholder="company@gmail.com"
                   :rules="[rules.required, rules.emailRules]"
                   required
@@ -44,6 +46,7 @@
                 <v-text-field
                   v-model="formCommercialAlly.phone_number"
                   label="Company phone number"
+                  id="company-phone-number"
                   placeholder="+1 (123) 456-7890"
                   v-mask="'+1 (###) ###-####'"
                   :rules="[rules.required, rules.phoneNumberRules]"
@@ -57,6 +60,7 @@
                 <v-text-field
                   v-model="formCommercialAlly.manager_name"
                   label="Manager name"
+                  id="manager-name"
                   placeholder="John"
                   :rules="[rules.required]"
                   required
@@ -66,6 +70,7 @@
                 <v-text-field
                   v-model="formCommercialAlly.manager_last_name"
                   label="Manager last name"
+                  id="manager-last-name"
                   placeholder="Doe"
                   :rules="[rules.required]"
                   required
@@ -78,6 +83,7 @@
                 <v-text-field
                   v-model="formCommercialAlly.description"
                   label="Commercial ally description"
+                  id="commercial-ally-description"
                   placeholder="Company description"
                   :rules="[rules.required]"
                   required

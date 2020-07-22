@@ -45,17 +45,5 @@ describe('1.1', function() {
      // await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.css(".blue--text > .v-btn__content")).click()
-    {
-      const element = await driver.findElement(By.CSS_SELECTOR, "body")
-     // await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
-    }
-    {
-      const element = await driver.findElement(By.css(".blue--text > .v-btn__content"))
-    // await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
-    {
-      const element = await driver.findElement(By.CSS_SELECTOR, "body")
-     // await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
-    }
   })
 })

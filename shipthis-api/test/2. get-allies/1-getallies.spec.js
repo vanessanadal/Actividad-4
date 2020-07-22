@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('TEST2', function() {
+describe('ROUTE2.1', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,7 +13,7 @@ describe('TEST2', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('TEST2', async function() {
+  it('ROUTE2.1', async function() {
     await driver.get("http://localhost:8085/")
     await driver.manage().window().setRect(1552, 840)
     await driver.findElement(By.id("login-email")).click()

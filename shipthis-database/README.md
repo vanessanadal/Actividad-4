@@ -37,16 +37,16 @@ postgres@$ psql
 3. Crear la base de datos.
 
 ```bash
-> CREATE DATABASE shipthisdb;
+> CREATE DATABASE shipthisdbactividad;
 ```
 
 4. Asignar privilegios al usuario.
 
 ```bash
-> GRANT ALL PRIVILEGES ON DATABASE shipthisdb TO shipthis_client;
+> GRANT ALL PRIVILEGES ON DATABASE shipthisdbactividad TO shipthis_client;
 ```
 
-LLegados a este punto la BD <strong>shipthisdb</strong> ha sido creada y el usuario <strong>shipthis_client</strong> tiene acceso a ella.
+LLegados a este punto la BD <strong>shipthisdbactividad</strong> ha sido creada y el usuario <strong>shipthis_client</strong> tiene acceso a ella.
 
 # Manejo de la BASE DE DATOS: Forma recomendada
 

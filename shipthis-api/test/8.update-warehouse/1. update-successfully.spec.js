@@ -7,7 +7,7 @@ describe('R8-update-successfully', function() {
   let driver
   let vars
   beforeEach(async function() {
-    driver = await new Builder().forBrowser('chrome').build()
+    driver = await new Builder().forBrowser('firefox').build()
     vars = {}
   })
   afterEach(async function() {
@@ -23,25 +23,19 @@ describe('R8-update-successfully', function() {
     await driver.findElement(By.css(".v-input:nth-child(2) > .v-input__control")).click()
     {
       const element = await driver.findElement(By.css(".v-btn__content"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.css(".v-btn__content")).click()
     {
-      const element = await driver.findElement(By.CSS_SELECTOR, "body")
-      await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
-    }
-    {
       const element = await driver.findElement(By.id("loginBtn"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
+
     }
     await driver.executeScript("window.scrollTo(0,500)")
+    await driver.wait(until.elementLocated(By.id("dash4")),30000);
     await driver.findElement(By.id("dash4")).click()
     await driver.executeScript("window.scrollTo(0,181)")
+    await driver.wait(until.elementLocated(By.css("tr:nth-child(1) .mdi-magnify")),30000);
     await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify")).click()
-    {
-      const element = await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
+    await driver.wait(until.elementLocated(By.css("tr:nth-child(1) .mr-2")),30000);
     await driver.findElement(By.css("tr:nth-child(1) .mr-2")).click()
     await driver.findElement(By.css(".align-center .v-btn__content")).click()
     await driver.findElement(By.id("wh-city")).click()
@@ -56,13 +50,8 @@ describe('R8-update-successfully', function() {
     await driver.findElement(By.id("wh-zip-code")).click()
     {
       const element = await driver.findElement(By.css(".blue--text > .v-btn__content"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.id("wh-zip-code")).sendKeys("07114")
     await driver.findElement(By.css(".blue--text > .v-btn__content")).click()
-    {
-      const element = await driver.findElement(By.CSS_SELECTOR, "body")
-      await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
-    }
   })
 })

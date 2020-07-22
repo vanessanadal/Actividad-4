@@ -7,7 +7,7 @@ describe('R3-update-successfully', function() {
   let driver
   let vars
   beforeEach(async function() {
-    driver = await new Builder().forBrowser('chrome').build()
+    driver = await new Builder().forBrowser('firefox').build()
     vars = {}
   })
   afterEach(async function() {
@@ -21,7 +21,6 @@ describe('R3-update-successfully', function() {
     await driver.findElement(By.id("login-password")).click()
     {
       const element = await driver.findElement(By.css(".v-btn__content"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.id("login-password")).sendKeys("password")
     await driver.findElement(By.css(".v-btn__content")).click()
@@ -35,7 +34,6 @@ describe('R3-update-successfully', function() {
     await driver.findElement(By.id("manager-name")).click()
     {
       const element = await driver.findElement(By.id("manager-name"))
-      await driver.actions({ bridge: true}).doubleClick(element).perform()
     }
     await driver.findElement(By.id("manager-name")).sendKeys("Mike")
     await driver.findElement(By.css(".blue--text > .v-btn__content")).click()

@@ -7,7 +7,7 @@ describe('R7-get-successfully', function() {
   let driver
   let vars
   beforeEach(async function() {
-    driver = await new Builder().forBrowser('chrome').build()
+    driver = await new Builder().forBrowser('firefox').build()
     vars = {}
   })
   afterEach(async function() {
@@ -21,10 +21,10 @@ describe('R7-get-successfully', function() {
     await driver.findElement(By.id("login-password")).click()
     {
       const element = await driver.findElement(By.css(".v-btn__content"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.id("login-password")).sendKeys("password")
     await driver.findElement(By.css(".v-btn__content")).click()
+    await driver.wait(until.elementLocated(By.id("dash4")),30000);
     await driver.findElement(By.id("dash4")).click()
     await driver.executeScript("window.scrollTo(0,181)")
     await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify")).click()

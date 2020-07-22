@@ -7,7 +7,7 @@ describe('R4-delete-successfully', function() {
   let driver
   let vars
   beforeEach(async function() {
-    driver = await new Builder().forBrowser('chrome').build()
+    driver = await new Builder().forBrowser('firefox').build()
     vars = {}
   })
   afterEach(async function() {
@@ -21,32 +21,28 @@ describe('R4-delete-successfully', function() {
     await driver.findElement(By.id("login-password")).click()
     {
       const element = await driver.findElement(By.css(".v-btn__content"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.id("login-password")).sendKeys("password")
     await driver.findElement(By.css(".v-btn__content")).click()
+    await driver.wait(until.elementLocated(By.id("dash4")),30000);
     await driver.findElement(By.id("dash4")).click()
     await driver.executeScript("window.scrollTo(0,181)")
     {
       const element = await driver.findElement(By.css(".v-data-table__wrapper"))
-      await driver.actions({ bridge: true }).moveToElement(element).clickAndHold().perform()
+
     }
     {
       const element = await driver.findElement(By.css(".v-data-table__wrapper"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
+
     }
     {
       const element = await driver.findElement(By.css(".v-data-table__wrapper"))
-      await driver.actions({ bridge: true }).moveToElement(element).release().perform()
+
     }
     await driver.findElement(By.css("tr:nth-child(1) .mdi-delete")).click()
     {
       const element = await driver.findElement(By.css("tr:nth-child(1) .mdi-delete"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
-    {
-      const element = await driver.findElement(By.CSS_SELECTOR, "body")
-      await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
+
     }
     await driver.findElement(By.css(".blue--text")).click()
   })

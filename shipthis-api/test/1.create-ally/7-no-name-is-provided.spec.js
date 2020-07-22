@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('throws an error when no commercial ally name is provided', function() {
+describe('R1-ally-name-not-provided', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,9 +13,19 @@ describe('throws an error when no commercial ally name is provided', function() 
   afterEach(async function() {
     await driver.quit();
   })
-  it('throws an error when no commercial ally name is provided', async function() {
-    await driver.get("http://localhost:8085/CommercialAllies")
+  it('R1-ally-name-not-provided', async function() {
+    await driver.get("http://localhost:8085/")
     await driver.manage().window().setRect(1296, 706)
+    await driver.findElement(By.id("login-email")).click()
+    await driver.findElement(By.id("login-email")).sendKeys("admin@gmail.com")
+    await driver.findElement(By.css(".v-input--is-focused .v-input__slot")).click()
+    {
+      const element = await driver.findElement(By.css(".v-btn__content"))
+      await driver.actions({ bridge: true }).moveToElement(element).perform()
+    }
+    await driver.findElement(By.id("login-password")).sendKeys("password")
+    await driver.findElement(By.css(".v-btn__content")).click()
+    await driver.findElement(By.css("#dash4 > .dashboard-card__info")).click()
     {
       const element = await driver.findElement(By.css(".mdi-plus"))
       await driver.actions({ bridge: true }).moveToElement(element).perform()
@@ -25,14 +35,15 @@ describe('throws an error when no commercial ally name is provided', function() 
       const element = await driver.findElement(By.CSS_SELECTOR, "body")
       await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
     }
+    await driver.findElement(By.id("company-name")).click()
     await driver.findElement(By.id("compnay-email")).click()
-    await driver.findElement(By.id("compnay-email")).sendKeys("ecommmerce@gmail.com")
+    await driver.findElement(By.id("compnay-email")).sendKeys("mercadolibre@gmail.com")
     await driver.findElement(By.id("company-phone-number")).click()
-    await driver.findElement(By.id("company-phone-number")).sendKeys("+1 (212) 659-4641")
+    await driver.findElement(By.id("company-phone-number")).sendKeys("+1 (212) 565-6565")
     await driver.findElement(By.id("manager-name")).click()
-    await driver.findElement(By.id("manager-name")).sendKeys("Ana")
+    await driver.findElement(By.id("manager-name")).sendKeys("Laura")
     await driver.findElement(By.id("manager-last-name")).click()
-    await driver.findElement(By.id("manager-last-name")).sendKeys("Mendez")
+    await driver.findElement(By.id("manager-last-name")).sendKeys("Lopez")
     {
       const element = await driver.findElement(By.css(".v-card__text"))
       await driver.actions({ bridge: true }).moveToElement(element).clickAndHold().perform()
@@ -50,3 +61,4 @@ describe('throws an error when no commercial ally name is provided', function() 
     await driver.findElement(By.css(".blue--text > .v-btn__content")).click()
   })
 })
+

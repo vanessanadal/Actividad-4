@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
 describe('R1-ally-name-not-provided', function() {
-  this.timeout(150000)
+  this.timeout(30000)
   let driver
   let vars
   beforeEach(async function() {

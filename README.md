@@ -46,12 +46,11 @@ Windows:
     npm run start
 
 ##### Ejecutar las pruebas: 
-Recomendamos correr el .js específico que se desea probar ya que cada prueba abre una pestaña al navegador web para ejecutarse.
 
-Podrá encontrar todo los comandos y cada una de las pruebas en este [Documento](https://docs.google.com/document/d/1gWTaQOvXXzdAoMbOoyKMODRVaam5w_a4Ouc1HA-bcxE/edit?usp=sharing)
+Podrá encontrar el objetivo de cada una de las pruebas en este [Documento](https://docs.google.com/document/d/1gWTaQOvXXzdAoMbOoyKMODRVaam5w_a4Ouc1HA-bcxE/edit?usp=sharing)
+Para ejecutarla en el servidor ejecute este comando
 
-    npm test <nombre_del_archivo> 
-    Ej: npm test create-ally.spec.js
+    npm test 
 
 # Integrantes del grupo:
 

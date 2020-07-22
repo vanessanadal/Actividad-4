@@ -39,7 +39,7 @@
               v-model="password"
               :rules="[rules.required]"
             ></v-text-field>
-            <v-btn block class="success primary--text my-4" @click="login()">Login</v-btn>
+            <v-btn block class="success primary--text my-4" id="loginBtn" @click="login()">Login</v-btn>
             <p class=" password-forgotten" @click="forgot_password_modal = true">{{$t("login.forgotMyPassword")}}</p>
           </v-form>
         </v-card-text>

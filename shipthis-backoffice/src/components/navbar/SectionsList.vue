@@ -4,12 +4,14 @@
       <!-- Condicional para saber si el usuario está logueado o no -->
       <div class="section-space text-center">
         <a
+          :id="section.id"
           @click="goRoute(section.link)"
           v-if="section.link == route"
           class="sections-list__itemactive success--text"
+        
           >{{ section.name }}</a
         >
-        <a class="sections-list__item" v-else @click="goRoute(section.link)">{{
+        <a class="sections-list__item" v-else @click="goRoute(section.link)"  :id="section.id" >{{
           section.name
         }}</a>
       </div>
@@ -26,27 +28,27 @@ export default {
     route: "",
     URLactual: "",
     sections: [
-      { id: "1", name: "Dashboard", link: "/Home" },
-      { id: "2", name: "Users", link: "/Users" },
-      { id: "3", name: "Shipments", link: "/Shipments" },
-      { id: "4", name: "Comments", link: "/Comments" },
+      { id: "sect1", name: "Dashboard", link: "/Home" },
+      { id: "sect2", name: "Users", link: "/Users" },
+      { id: "sect3", name: "Shipments", link: "/Shipments" },
+      { id: "sect4", name: "Comments", link: "/Comments" },
       {
-        id: "5",
+        id: "sect5",
         name: "Allies",
         link: "/CommercialAllies"
       },
       {
-        id: "6",
+        id: "sect6",
         name: "Configuration",
         link: "/Configuration"
       },
       {
-        id: "8",
+        id: "sect8",
         name: "Discounts",
         link: "/Discounts"
       },
       {
-        id: "7",
+        id: "sect7",
         name: "Sign Out",
         link: ""
       }

@@ -14,6 +14,7 @@
             :description="dashboard.desc"
             :icon="dashboard.icon"
             :section="dashboard.section"
+            :id="dashboard.id"
             class="text-center py-4"
           ></Card>
         </div>
@@ -28,7 +29,7 @@ export default {
   name: "Dashboard",
   data: () => ({
     dashItems: [
-      { id: 1, 
+      { id: "dash1", 
         name: "Users", 
         desc: "", 
         icon: "mdi-account-group", 
@@ -36,14 +37,14 @@ export default {
         section: "Users",
         },
       {
-        id: 2,
+        id: "dash2",
         name: "Shipments",
         desc: "",
         icon: "mdi-truck",
         route: "Shipments",
         section: "Shipments"
       },
-      { id: 3, 
+      { id: "dash3", 
         name: "Comments", 
         desc: "", 
         icon: "mdi-message", 
@@ -51,7 +52,7 @@ export default {
         section: "Comments",
       },
       {
-        id: 4,
+        id: "dash4",
         name: "Commercial Allies",
         desc: "",
         icon: "mdi-handshake",
@@ -59,7 +60,7 @@ export default {
         section: "CommercialAllies"
       },
       {
-        id: 5,
+        id: "dash5",
         name: "Configuration",
         desc: "",
         icon: "mdi-cog",
@@ -67,7 +68,7 @@ export default {
         section: "Configuration"
       },
        {
-        id: 6,
+        id: "dash6",
         name: "Discounts",
         desc: "",
         icon: "mdi-sale",

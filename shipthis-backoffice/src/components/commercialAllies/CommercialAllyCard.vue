@@ -112,6 +112,7 @@
           </v-col>
           <v-col v-if="commercialAlly" cols="12" md="1" class="d-flex justify-end align-end">
             <v-btn
+              id="CreateAllieBtn"
               v-if="this.commercialAlly.status != 'DELETED'"
               :class="$vuetify.breakpoint.smAndDown? 'mt-3' : 'mx-2'"
               :fab="!$vuetify.breakpoint.smAndDown"
@@ -121,7 +122,7 @@
               color="indigo"
               @click="activateWarehouseDialog('CREATE')"
             >
-              <v-icon dark>mdi-plus</v-icon>
+              <v-icon id="CreateAllieIcon" dark>mdi-plus</v-icon>
             </v-btn>
           </v-col>
         </v-row>

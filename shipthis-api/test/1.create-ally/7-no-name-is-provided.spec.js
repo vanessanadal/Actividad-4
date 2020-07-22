@@ -2,8 +2,8 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('throws an error when no commercial ally name is provided', function() {
-  this.timeout(30000)
+describe('R1-ally-name-not-provided', function() {
+  this.timeout(150000)
   let driver
   let vars
   beforeEach(async function() {
@@ -13,37 +13,42 @@ describe('throws an error when no commercial ally name is provided', function() 
   afterEach(async function() {
     await driver.quit();
   })
-  it('throws an error when no commercial ally name is provided', async function() {
-    await driver.get("http://localhost:8085/CommercialAllies")
+  it('R1-ally-name-not-provided', async function() {
+    await driver.get("http://localhost:8085/")
     await driver.manage().window().setRect(1296, 706)
+    await driver.findElement(By.id("login-email")).click()
+    await driver.findElement(By.id("login-email")).sendKeys("admin@gmail.com")
+    await driver.findElement(By.css(".v-input--is-focused .v-input__slot")).click()
+    {
+      const element = await driver.findElement(By.css(".v-btn__content"))
+    }
+    await driver.findElement(By.id("login-password")).sendKeys("password")
+    await driver.findElement(By.css(".v-btn__content")).click()
+    await driver.findElement(By.css("#dash4 > .dashboard-card__info")).click()
     {
       const element = await driver.findElement(By.css(".mdi-plus"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.css(".mdi-plus")).click()
     {
       const element = await driver.findElement(By.CSS_SELECTOR, "body")
-      await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
     }
+    await driver.findElement(By.id("company-name")).click()
     await driver.findElement(By.id("compnay-email")).click()
-    await driver.findElement(By.id("compnay-email")).sendKeys("ecommmerce@gmail.com")
+    await driver.findElement(By.id("compnay-email")).sendKeys("mercadolibre@gmail.com")
     await driver.findElement(By.id("company-phone-number")).click()
-    await driver.findElement(By.id("company-phone-number")).sendKeys("+1 (212) 659-4641")
+    await driver.findElement(By.id("company-phone-number")).sendKeys("+1 (212) 565-6565")
     await driver.findElement(By.id("manager-name")).click()
-    await driver.findElement(By.id("manager-name")).sendKeys("Ana")
+    await driver.findElement(By.id("manager-name")).sendKeys("Laura")
     await driver.findElement(By.id("manager-last-name")).click()
-    await driver.findElement(By.id("manager-last-name")).sendKeys("Mendez")
+    await driver.findElement(By.id("manager-last-name")).sendKeys("Lopez")
     {
       const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).clickAndHold().perform()
     }
     {
       const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     {
       const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).release().perform()
     }
     await driver.findElement(By.id("commercial-ally-description")).click()
     await driver.findElement(By.id("commercial-ally-description")).sendKeys("Ecommerce")

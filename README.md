@@ -17,18 +17,19 @@ Continuar con la lectura de este documento para su correcta instalación
 
 
 ##### Instalación del cliente: 
-Seguir las instrucciones descritas en el siguiente [ARCHIVO]() 
+Seguir las instrucciones descritas en el siguiente [ARCHIVO](https://github.com/vanessanadal/Actividad-4/blob/Develop/shipthis-backoffice/README.md) 
 
 ##### Instalación del servidor: 
-Seguir las instrucciones descritas en el siguiente [ARCHIVO]() 
+Seguir las instrucciones descritas en el siguiente [ARCHIVO](https://github.com/vanessanadal/Actividad-4/blob/Develop/shipthis-api/README.md) 
 
 ##### Instalación del Base de datos: 
-Seguir las instrucciones descritas en el siguiente ARCHIVO
+Seguir las instrucciones descritas en el siguiente [ARCHIVO](https://github.com/vanessanadal/Actividad-4/blob/Develop/shipthis-database/README.md)
 
 #### Uso de la aplicación
 Tras completar la instalación, para comenzar a utilizar la aplicación debera seguir los siguientes pasos
 
-Iniciar el cliente: Dirigirse a la carpeta shipthis-backoffice y ejecutar el siguiente comando
+##### Iniciar el cliente: 
+Dirigirse a la carpeta shipthis-backoffice y ejecutar el siguiente comando
 Linux,macOS y:
 
     npm run serve
@@ -36,7 +37,7 @@ Windows:
 
     npm run serve
     
-Iniciar el servidor: Dirigirse a la carpeta shipthis-api y ejecutar el siguiente comando
+##### Iniciar el servidor: Dirigirse a la carpeta shipthis-api y ejecutar el siguiente comando
 Linux,macOS y:
 
     npm run start
@@ -44,12 +45,13 @@ Windows:
 
     npm run start
 
-Ejecutar las pruebas: 
+##### Ejecutar las pruebas: 
 Recomendamos correr el .js específico que se desea probar ya que cada prueba abre una pestaña al navegador web para ejecutarse.
 
 Podrá encontrar todo los comandos y cada una de las pruebas en este [Documento](https://docs.google.com/document/d/1gWTaQOvXXzdAoMbOoyKMODRVaam5w_a4Ouc1HA-bcxE/edit?usp=sharing)
 
     npm test <nombre_del_archivo> 
+    Ej: npm test create-ally.spec.js
 
 # Integrantes del grupo:
 

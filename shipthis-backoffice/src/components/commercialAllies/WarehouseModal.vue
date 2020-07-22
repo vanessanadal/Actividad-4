@@ -10,7 +10,7 @@
         <v-container>
           <v-form
             ref="warehouse_form"
-            v-model="valid"
+            v-model="valid" id="wh-form"
             v-on="save.prevent"
             lazy-validation
             v-if="action != 'DELETE'"
@@ -19,7 +19,7 @@
               <v-col cols="12" md="6">
                 <v-text-field
                   v-model="formWarehouse.name"
-                  label="Name"
+                  label="Name" id="wh-name"
                   :rules="[rules.required]"
                   required
                 ></v-text-field>
@@ -48,7 +48,7 @@
               <v-row justify="center">
                 <v-col md="6" cols="12">
                   <v-text-field
-                    v-model="direction.city"
+                    v-model="direction.city" id="wh-city"
                     :rules="[rules.required]"
                     label="City"
                     required
@@ -56,7 +56,7 @@
                 </v-col>
                 <v-col md="6" cols="12">
                   <v-text-field
-                    v-model="direction.state"
+                    v-model="direction.state" id="wh-state"
                     :rules="[rules.required]"
                     label="State"
                     required
@@ -66,14 +66,14 @@
               <v-row justify="center">
                 <v-col md="6" cols="12">
                   <v-text-field
-                    v-model="direction.address"
+                    v-model="direction.address" id="wh-address"
                     :rules="[rules.required]"
                     label="Address"
                   ></v-text-field>
                 </v-col>
                 <v-col md="6" cols="12">
                   <v-text-field
-                    v-model="direction.zip_code"
+                    v-model="direction.zip_code" id="wh-zip-code"
                     :rules="[rules.required]"
                     v-mask="'#####'"
                     label="Zip Code"

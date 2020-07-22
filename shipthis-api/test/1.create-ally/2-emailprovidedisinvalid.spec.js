@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
 describe('email-provided-is-invalid', function() {
-  this.timeout(3000000)
+  this.timeout(30000)
   let driver
   let vars
   beforeEach(async function() {
@@ -14,57 +14,47 @@ describe('email-provided-is-invalid', function() {
     await driver.quit();
   })
   it('email-provided-is-invalid', async function() {
-    await driver.get("http://localhost:8085/CommercialAllies")
+    await driver.get("http://localhost:8085/")
     await driver.manage().window().setRect(1296, 706)
+    await driver.findElement(By.id("login-email")).click()
+    await driver.findElement(By.id("login-email")).sendKeys("admin@gmail.com")
+    await driver.findElement(By.css(".v-input--is-focused .v-input__slot")).click()
+    {
+      const element = await driver.findElement(By.css(".v-btn__content"))
+      
+    }
+    await driver.findElement(By.id("login-password")).sendKeys("password")
+    await driver.findElement(By.css(".v-btn__content")).click()
+    await driver.wait(until.elementLocated(By.id('dash4')),30000);
+    await driver.findElement(By.id("dash4")).click()
+    {
+      const element = await driver.findElement(By.css(".mdi-plus"))
+      
+    }
     await driver.findElement(By.css(".mdi-plus")).click()
-    {
-      const element = await driver.findElement(By.id("company-name"))
-      await driver.actions({ bridge: true }).moveToElement(element).clickAndHold().perform()
-    }
-    {
-      const element = await driver.findElement(By.id("company-name"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
-    {
-      const element = await driver.findElement(By.id("company-name"))
-      await driver.actions({ bridge: true }).moveToElement(element).release().perform()
-    }
+    
+    await driver.findElement(By.css("#AllyForm > .row:nth-child(1)")).click()
+    
     await driver.findElement(By.id("company-name")).click()
     await driver.findElement(By.id("company-name")).sendKeys("Mercado Libre")
+    await driver.findElement(By.css(".v-input--is-focused .v-input__slot")).click()
     await driver.findElement(By.id("compnay-email")).click()
-    await driver.findElement(By.id("compnay-email")).sendKeys("MercadoLibre@")
+    await driver.findElement(By.id("compnay-email")).sendKeys("mercadolibre@")
     await driver.findElement(By.id("company-phone-number")).click()
-    await driver.findElement(By.id("company-phone-number")).sendKeys("+1 (212) 565-6462")
+    await driver.findElement(By.id("company-phone-number")).sendKeys("+1 (212) 656-4613")
     await driver.findElement(By.id("manager-name")).click()
     await driver.findElement(By.id("manager-name")).sendKeys("Laura")
     await driver.findElement(By.id("manager-last-name")).click()
     await driver.findElement(By.id("manager-last-name")).sendKeys("Lopez")
-    {
-      const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).clickAndHold().perform()
-    }
-    {
-      const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
-    {
-      const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).release().perform()
-    }
     await driver.findElement(By.id("commercial-ally-description")).click()
-    await driver.findElement(By.id("commercial-ally-description")).sendKeys("E-commerce")
+    {
+      const element = await driver.findElement(By.css(".blue--text > .v-btn__content"))
+      
+    }
+    await driver.findElement(By.id("commercial-ally-description")).sendKeys("Ecommerce")
     await driver.findElement(By.css(".blue--text > .v-btn__content")).click()
-    {
-      const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).clickAndHold().perform()
-    }
-    {
-      const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
-    {
-      const element = await driver.findElement(By.css(".v-card__text"))
-      await driver.actions({ bridge: true }).moveToElement(element).release().perform()
-    }
+    
+    await driver.findElement(By.css("#AllyForm > .row:nth-child(1)")).click()
+    
   })
 })

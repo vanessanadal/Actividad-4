@@ -1,8 +1,8 @@
 # Actividad-4
 
-Para esta actividad realizamos una suite de pruebas para la historia de usuario "Como administrador del sistema ShipThis Quiero gestionar la información de mis aliados comerciales Para mantener actualizada la información y acceso de los mismos a mi sistema."
+Para esta actividad realizamos una suite de pruebas para la historia de usuario **"Como administrador del sistema ShipThis Quiero gestionar la información de mis aliados comerciales Para mantener actualizada la información y acceso de los mismos a mi sistema."**
 
-Requisitos para la instalación
+#### Requisitos para la instalación
 
 Maquina con sistema operativo Windows, Linux o Mac
 NodeJs version 12.17.0 LTS o superior
@@ -10,54 +10,48 @@ ts-node version 8.10.2 LTS o superiorts-node
 PostgreSQL para almacenamiento de datos
 VueJS Version 2.0 para la ejecucion del cliente
 NestJS para la ejecucion de la API
+Mocha como marco de prueba 
+Selenium IDE y Selenium Web Driver para la automatización de pruebas
+
 Continuar con la lectura de este documento para su correcta instalación
 
 
-Instalación del cliente: Dirigirse a la carpeta shipthis-client y ejecutar el siguiente comando
-Linux,macOS y:
+##### Instalación del cliente: 
+Seguir las instrucciones descritas en el siguiente [ARCHIVO](https://github.com/vanessanadal/Actividad-4/blob/Develop/shipthis-backoffice/README.md) 
 
-$ npm install
-Windows:
+##### Instalación del servidor: 
+Seguir las instrucciones descritas en el siguiente [ARCHIVO](https://github.com/vanessanadal/Actividad-4/blob/Develop/shipthis-api/README.md) 
 
-$ npm install
-Ademas debera anexar el correspondiente archivo .env que contiene las variables de configuracion. Para obtenerlo, pornerse en contacto con alguno de los colabores del proyecto.
+##### Instalación del Base de datos: 
+Seguir las instrucciones descritas en el siguiente [ARCHIVO](https://github.com/vanessanadal/Actividad-4/blob/Develop/shipthis-database/README.md)
 
-Instalación del servidor: Dirigirse a la carpeta shipthis-api y ejecutar el siguiente comando
-Linux,macOS y:
-
-$ npm install
-Windows:
-
-$ npm install
-Ademas debera anexar el correspondiente archivo .env que contiene las variables de configuracion. Para obtenerlo, pornerse en contacto con alguno de los colabores del proyecto.
-
-Instalación del Base de datos:
-Seguir las instrucciones descritas en el siguiente ARCHIVO
-
-Uso de la aplicación
+#### Uso de la aplicación
 Tras completar la instalación, para comenzar a utilizar la aplicación debera seguir los siguientes pasos
 
-Iniciar el cliente: Dirigirse a la carpeta shipthis-client y ejecutar el siguiente comando
+##### Iniciar el cliente: 
+Dirigirse a la carpeta shipthis-backoffice y ejecutar el siguiente comando
 Linux,macOS y:
 
-$ npm run serve
+    npm run serve
 Windows:
 
-$ npm run serve
-Iniciar el servidor: Dirigirse a la carpeta shipthis-api y ejecutar el siguiente comando
+    npm run serve
+    
+##### Iniciar el servidor: Dirigirse a la carpeta shipthis-api y ejecutar el siguiente comando
 Linux,macOS y:
 
-$ npm run start
+    npm run start
 Windows:
 
-$ npm run start
+    npm run start
 
-Desarrolladores
+##### Ejecutar las pruebas: 
+Recomendamos correr el .js específico que se desea probar ya que cada prueba abre una pestaña al navegador web para ejecutarse.
 
-David Monroy @david-monroy 📖
-Carolina Patiño @carolinapatino 📖
-Vanessa Nadal @vanessanadal 📖
+Podrá encontrar todo los comandos y cada una de las pruebas en este [Documento](https://docs.google.com/document/d/1gWTaQOvXXzdAoMbOoyKMODRVaam5w_a4Ouc1HA-bcxE/edit?usp=sharing)
 
+    npm test <nombre_del_archivo> 
+    Ej: npm test create-ally.spec.js
 
 # Integrantes del grupo:
 

@@ -21,16 +21,15 @@ describe('R6-no-name-provided', function() {
     await driver.findElement(By.id("login-password")).click()
     {
       const element = await driver.findElement(By.css(".v-btn__content"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.id("login-password")).sendKeys("password")
     await driver.findElement(By.css(".v-btn__content")).click()
     await driver.executeScript("window.scrollTo(0,500)")
+    await driver.wait(until.elementLocated(By.id('dash4')),1000000);
     await driver.findElement(By.id("dash4")).click()
     await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify")).click()
     {
       const element = await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.id("CreateAllieIcon")).click()
     await driver.findElement(By.id("wh-city")).click()

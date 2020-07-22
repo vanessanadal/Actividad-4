@@ -30,16 +30,13 @@ describe('R6-no-direction-provided', function() {
     await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify")).click()
     {
       const element = await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     {
       const element = await driver.findElement(By.css("#CreateAllieBtn > .v-btn__content"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.css("#CreateAllieBtn > .v-btn__content")).click()
     {
       const element = await driver.findElement(By.CSS_SELECTOR, "body")
-      await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
     }
     await driver.findElement(By.id("wh-name")).click()
     await driver.findElement(By.id("wh-name")).sendKeys("New Warehouse")

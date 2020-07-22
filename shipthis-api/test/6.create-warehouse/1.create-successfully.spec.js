@@ -3,11 +3,11 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
 describe('R6-create-successfully', function() {
-  this.timeout(30000)
+  this.timeout(3000000)
   let driver
   let vars
   beforeEach(async function() {
-    driver = await new Builder().forBrowser('chrome').build()
+    driver = await new Builder().forBrowser('firefox').build()
     vars = {}
   })
   afterEach(async function() {
@@ -21,16 +21,16 @@ describe('R6-create-successfully', function() {
     await driver.findElement(By.id("login-password")).click()
     {
       const element = await driver.findElement(By.id("loginBtn"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.id("login-password")).sendKeys("password")
     await driver.findElement(By.id("loginBtn")).click()
+    await driver.wait(until.elementLocated(By.id('dash4')),1000000);
     await driver.findElement(By.id("dash4")).click()
     await driver.executeScript("window.scrollTo(0,181)")
+    
     await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify")).click()
     {
       const element = await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
     }
     await driver.findElement(By.css("#CreateAllieBtn > .v-btn__content")).click()
     await driver.findElement(By.id("wh-name")).click()

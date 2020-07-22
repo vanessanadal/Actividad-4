@@ -9,6 +9,7 @@
       <v-card-text>
         <v-container>
           <v-form
+            id="AllyForm"
             ref="commercialAlly_form"
             v-model="valid"
             v-on="save.prevent"

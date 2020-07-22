@@ -51,6 +51,11 @@ Podrá encontrar el objetivo de cada una de las pruebas en este [Documento](http
 Para ejecutarla en el servidor ejecute este comando
 
     npm test 
+    
+# Importante
+
+- El archivo .side generado por Selenium Web Driver se encuentra en la raiz del backend proyecto (Shipthis-api).
+- El codigo de las pruebas se encuentra en la carpeta Test del backend del proyecto (Shipthis-api).
 
 # Integrantes del grupo:
 

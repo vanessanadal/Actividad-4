@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
 describe('warehouses-consulted-successfully', function() {
-  this.timeout(30000)
+  this.timeout(100000)
   let driver
   let vars
   beforeEach(async function() {
@@ -15,21 +15,16 @@ describe('warehouses-consulted-successfully', function() {
   })
   it('warehouses-consulted-successfully', async function() {
     await driver.get("http://localhost:8085/")
-    await driver.manage().window().setRect(1296, 706)
+    await driver.manage().window().setRect(1552, 840)
+    await driver.findElement(By.id("login-email")).click()
     await driver.findElement(By.id("login-email")).click()
     await driver.findElement(By.id("login-email")).sendKeys("admin@gmail.com")
-    await driver.findElement(By.css(".v-input--is-focused .v-input__slot")).click()
-    {
-      const element = await driver.findElement(By.css(".success"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
+    await driver.findElement(By.id("login-password")).click()
     await driver.findElement(By.id("login-password")).sendKeys("password")
-    await driver.findElement(By.css(".success")).click()
-    {
-      const element = await driver.findElement(By.CSS_SELECTOR, "body")
-      await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
-    }
-    await driver.findElement(By.linkText("Allies")).click()
+    await driver.findElement(By.css(".v-btn__content")).click()
+    await driver.wait(until.elementLocated(By.id("sect5")),30000);
+    await driver.findElement(By.id("sect5")).click()
+    await driver.wait(until.elementLocated(By.css("tr:nth-child(1) .mdi-magnify")),30000);
     await driver.findElement(By.css("tr:nth-child(1) .mdi-magnify")).click()
   })
 })
